@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Single-seaters 2025 - Ferrari, Mclaren, Red Bull Racing and more</title>
+    <link rel="icon" href="imagenes/F1_App_Red_Logo_White_Background.png" type="imagenes/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="menu container">
+
+            <img class="logo-1" src="imagenes/F1logo.png"width=10% alt="100">
+            <imput type="checkbox" id="menu"/>
+            <nav class="navbar">
+
+            <div class="menu-1">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Pilotos.html">Pilotos</a></li>
+                    <li><a href="Equipos.html">Equipos</a></li>
+                    <li><a href="Monoplazas.html">Monoplazas</a></li>
+                    <li><a href="Circuitos.html">Circuitos</a></li>
+
+                </ul>
+            </div>
+
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+      <section class="video-container">
+        <video id="slider"
+        autoplay
+        loop
+        playsinline
+        webkit-playsinline
+        style="position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;object-fit: cover;z-index: -1;pointer-events: none;">
+            <source src="videos/MonoplazaMclaren.webm" type="video/webm">
+        </video>
+
+            <ul class="navigation">
+                <li onclick="videoUrl('videos/MonoplazaMclaren.webm')"><img src="imagenes/mclaren.png"><P>Mclaren MCL38</P></li>
+                <li onclick="videoUrl('videos/MonoplazaRedbullRacing.webm')"><img src="imagenes/red-bull-racing.png"><P>Red bull RB20</P></li>
+                <li onclick="videoUrl('videos/MonoplazaFerrari.webm')"><img src="imagenes/ferrari.png"><P>Ferrari SF-25</P></li>
+                <li onclick="videoUrl('videos/MonoplazaMercedes.webm')"><img src="imagenes/mercedes.png"><P>Mercedes W12</P></li>
+                <li onclick="videoUrl('videos/MonoplazaWilliams.webm')"><img src="imagenes/williams.png"><P>Williams FW47</P></li>
+                <li onclick="videoUrl('videos/MonoplazaAlpine.webm')" width="100%"><img src="imagenes/alpine.png"><P>Alpine A525</P></li>
+                <li onclick="videoUrl('videos/MonoplazaRacingbulls.webm')"><img src="imagenes/racing-bulls.png"><P>Racing Bulls VCARB02</P></li>
+                <li onclick="videoUrl('videos/MonoplazaKickSauber.webm')"><img src="imagenes/kick-sauber.png"><P>Kick Sauber C45</P></li>
+                <li onclick="videoUrl('videos/MonoplazaHaas.webm')"><img src="imagenes/haas.png"><P>Haas VF-25</P></li>
+                <li onclick="videoUrl('videos/MonoplazaAstonMartin.webm')" ><img src="imagenes/aston-martin.png"><P>Aston Martin Aramco AMR25</P></li>
+            </ul>   
+      </section>
+    
+    </main>
+
+    <script type="text/javascript">
+        function videoUrl(hmmmmmm){
+            document.getElementById("slider").src=hmmmmmm;
+        }
+        
+        const video = document.getElementById("video-fondo");
+
+        const esIOS = () => {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        };
+
+        if (esIOS()) {
+            video.muted = true;  
+        } else {
+            video.muted = false; 
+            video.volume = 1;
+        }
+
+        video.play().catch((e) => {
+            console.warn("Autoplay bloqueado, esperando interacción del usuario:", e);
+        });
+    </script>
+    
+</body>
+</html>

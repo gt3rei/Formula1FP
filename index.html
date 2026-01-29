@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 - The Fan Home of Formula 1 Racing</title>
+    <link rel="icon" href="imagenes/F1_App_Red_Logo_White_Background.png" type="imagenes/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        <div class="contenedor-encabezado">
+            <h1>¡BIENVENIDO A TU RINCÓN DE FÓRMULA 1!</h1>
+            <p class="subtitulo">Los equipos, pilotos, monoplazas y circuitos que hacen de este el deporte más rápido y emocionante.</p>
+        </div>
+    </div>
+
+    <header>
+        <div class="menu container">
+
+            <img class="logo-1" src="imagenes/F1logo.png"width=10% alt="100">
+            <nav class="navbar">
+
+            <div class="menu-1">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="Pilotos.html">Pilotos</a></li>
+                    <li><a href="Equipos.html">Equipos</a></li>
+                    <li><a href="Monoplazas.html">Monoplazas</a></li>
+                    <li><a href="Circuitos.html">Circuitos</a></li>
+
+                </ul>
+            </div>
+            
+            </input>
+            </nav>
+        </div>
+    </header>
+
+        <video id="Videointro"
+        autoplay
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        style="position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;object-fit: cover;z-index: -1;pointer-events: none;">
+            <source src="videos/Videointro.webm" type="video/webm">
+                Tu navegador no soporta el tag de video.
+        </video>
+
+    <script>
+        const esIOS = () => {
+                return /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            };
+
+        if (esIOS()) {
+                video.muted = true; 
+            } 
+        else {
+                video.muted = false;
+                video.volume = 1;
+            }
+                video.play().catch((e) => {
+                console.warn("Autoplay bloqueado, esperando interacción del usuario:", e);
+            });
+     </script>
+</body>
+</html>
